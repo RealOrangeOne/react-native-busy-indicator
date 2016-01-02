@@ -1,0 +1,11 @@
+{
+  "name": "BusyIndicator",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "react-native start"
+  },
+  "dependencies": {
+    "react-native": "^0.17.0",
+    "react-native-button": "^1.3.1"
+  }
+}
