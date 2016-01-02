@@ -4,24 +4,20 @@
 
 "use strict";
 import EventEmitter from 'EventEmitter';
+let eventEmitter = new EventEmitter();
 
-class LoaderHandler extends EventEmitter {
-  constructor () {
-    this.state = {};
+let loaderHandler = {
+  getEventEmitter: function(){
+    return eventEmitter;
+  },
+
+  showLoader: function(title){
+    eventEmitter.emit('changeLoadingEffect', {title : title, isVisible : true});
+  },
+
+  hideLoader: function(title){
+    eventEmitter.emit('changeLoadingEffect', {title : title, isVisible : false});
   }
+};
 
-  getState () {
-    return this.state;
-  }
-
-  showLoader(title){
-    this.emit('changeLoadingEffect', {title : title});
-  }
-
-  hideLoader(title){
-    this.emit('changeLoadingEffect', {title : title});
-  }
-}
-
-let loaderHandler = new LoaderHandler();
-export default loaderHandler;
+module.exports = loaderHandler;

@@ -1,5 +1,5 @@
 # react-native-busy-indicator
-![Demo](https://github.com/Durgaprasad-Budhwani/react-native-busy-indicator/blob/master/demo.png)
+![Demo](https://raw.githubusercontent.com/Durgaprasad-Budhwani/react-native-busy-indicator/master/demo.png)
 
 ## Install
 ```shell
@@ -7,7 +7,7 @@ npm install react-native-busy-indicator --save
 ```
 
 ## Usage
-Keep <BusyIndicator /> component at root level and at the last inside view. Order Matter.
+Keep <BusyIndicator /> component at root level and at the last inside view.
 
 ```js
 var BusyIndicator = require('./libs/index');

@@ -6,8 +6,8 @@
 
 var React = require('react-native');
 var Button = require('react-native-button');
-var BusyIndicator = require('./libs/index');
-var loaderHandler = require('./libs/LoaderHandler');
+var BusyIndicator = require('react-native-busy-indicator');
+var loaderHandler = require('react-native-busy-indicator/LoaderHandler');
 var TimerMixin = require('react-timer-mixin');
 
 var {
