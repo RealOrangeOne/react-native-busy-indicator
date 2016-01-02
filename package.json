@@ -2,7 +2,6 @@
   "name": "react-native-busy-indicator",
   "version": "1.0.0",
   "description": "This react native package is used to show and hide busy indicator whenver users wants to show progress bar",
-  "main": "index.js",
   "dependencies": {
     "react-native": "^0.17.0"
   },
@@ -15,6 +14,10 @@
     "loading",
     "indicator"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Durgaprasad-Budhwani/react-native-busy-indicator.git"
+  },
   "author": "Durgaprasad Budhwani",
   "license": "MIT"
 }
