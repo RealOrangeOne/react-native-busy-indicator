@@ -1,4 +1,7 @@
 # react-native-busy-indicator
+
+[![Requirements Status](https://requires.io/github/Durgaprasad-Budhwani/react-native-busy-indicator/requirements.svg?branch=master)](https://requires.io/github/Durgaprasad-Budhwani/react-native-busy-indicator/requirements/?branch=master)
+
 ![Demo](https://raw.githubusercontent.com/Durgaprasad-Budhwani/react-native-busy-indicator/master/demo.png)
 
 ## Install
