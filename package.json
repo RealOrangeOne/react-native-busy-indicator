@@ -1,7 +1,7 @@
 {
   "name": "react-native-busy-indicator",
   "version": "1.0.2",
-  "description": "This react native package is used to show and hide busy indicator whenver users wants to show progress bar",
+  "description": "A simple busy indicator which can be trigger from any child or navigated page in react native application",
   "keywords": [
     "React",
     "react",
@@ -9,8 +9,13 @@
     "busy",
     "indicator",
     "loading",
-    "indicator"
+    "indicator",
+    "ios",
+    "android"
   ],
+  "peerDependencies": {
+    "react-native": "^0.17.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:Durgaprasad-Budhwani/react-native-busy-indicator.git"

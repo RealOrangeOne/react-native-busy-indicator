@@ -53,3 +53,8 @@ Showing busy indicator can be called from any other page with the help of loader
 - **`textColor`** _(String)_ - text color.
 - **`textFontSize`** _(Number)_ - text font size.
 
+## Tools
+
+- **IDE** - [IntelliJ IDEA ](https://www.jetbrains.com/idea/ "IntelliJ IDEA")
+- **Emulator** - [Genymotion](https://www.genymotion.com/ "genymotion")
+
