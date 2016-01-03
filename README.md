@@ -1,5 +1,4 @@
-# react-native-busy-indicator [![npm version](https://badge.fury.io/js/react-native-busy-indicator.svg)](https://badge.fury.io/js/react-native-busy-indicator) [![Requirements Status](https://requires.io/github/Durgaprasad-Budhwani/react-native-busy-indicator/requirements.svg?branch=master)](https://requires.io/github/Durgaprasad-Budhwani/react-native-busy-indicator/requirements/?branch=master)
-
+# react-native-busy-indicator [![npm version](https://badge.fury.io/js/react-native-busy-indicator.svg)](https://badge.fury.io/js/react-native-busy-indicator) [![Requirements Status](https://requires.io/github/Durgaprasad-Budhwani/react-native-busy-indicator/requirements.svg?branch=master)](https://requires.io/github/Durgaprasad-Budhwani/react-native-busy-indicator/requirements/?branch=master) [![Build Status](https://travis-ci.org/Durgaprasad-Budhwani/react-native-busy-indicator.svg?branch=master)](https://travis-ci.org/Durgaprasad-Budhwani/react-native-busy-indicator)
 
 
 ![Demo](https://raw.githubusercontent.com/Durgaprasad-Budhwani/react-native-busy-indicator/master/demo.png)
