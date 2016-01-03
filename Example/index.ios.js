@@ -4,8 +4,6 @@
  */
 'use strict';
 
-'use strict';
-
 var React = require('react-native');
 var Button = require('react-native-button');
 var BusyIndicator = require('./libs/index');
@@ -31,7 +29,7 @@ BusyIndicatorDemo = React.createClass({
         >
           Press Me!
         </Button>
-        <BusyIndicator></BusyIndicator>
+        <BusyIndicator/>
       </View>
     );
   },

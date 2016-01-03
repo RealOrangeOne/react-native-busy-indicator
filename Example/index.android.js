@@ -29,7 +29,7 @@ BusyIndicatorDemo = React.createClass({
           >
             Press Me!
           </Button>
-          <BusyIndicator></BusyIndicator>
+          <BusyIndicator/>
         </View>
       );
   },

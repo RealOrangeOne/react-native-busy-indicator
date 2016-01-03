@@ -1,6 +1,6 @@
 {
   "name": "react-native-busy-indicator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple busy indicator which can be trigger from any child or navigated page in react native application",
   "keywords": [
     "React",
@@ -11,7 +11,9 @@
     "loading",
     "indicator",
     "ios",
-    "android"
+    "android",
+    "react-component",
+    "react-native"
   ],
   "peerDependencies": {
     "react-native": "^0.17.0"
