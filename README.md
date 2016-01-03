@@ -10,7 +10,7 @@ npm install react-native-busy-indicator --save
 Keep <BusyIndicator /> component at root level and at the last inside view.
 
 ```js
-var BusyIndicator = require('./libs/index');
+var BusyIndicator = require('react-native-busy-indicator');
 
 var YourComponent = React.createClass({
 
@@ -29,7 +29,7 @@ var YourComponent = React.createClass({
 Showing busy indicator can be called from any other page with the help of loaderHandler provided <BusyIndicator /> tag should be placed at root level.
 
 ```js
-  var loaderHandler = require('./libs/LoaderHandler');
+  var loaderHandler = require('react-native-busy-indicator/LoaderHandler');
   
   
   loaderHandler.showLoader("Loading"); // 'Loading' is title
@@ -37,7 +37,7 @@ Showing busy indicator can be called from any other page with the help of loader
 
 ### Hiding the BusyIndicator
 ```js
-    var loaderHandler = require('./libs/LoaderHandler');
+  var loaderHandler = require('react-native-busy-indicator/LoaderHandler');
     
     
     loaderHandler.hideLoader();
