@@ -56,9 +56,9 @@ Showing busy indicator can be called from any other page with the help of loader
 
 ## Demo
 
-![Demo](https://raw.githubusercontent.com/Durgaprasad-Budhwani/react-native-busy-indicator/master/demo.png)
+![Demo](https://raw.githubusercontent.com/Durgaprasad-Budhwani/react-native-busy-indicator/master/demo.gif)
 
-## Example 
+## Example gif
 
 Check full example in the `Example` folder. 
 
