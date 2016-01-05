@@ -2,21 +2,20 @@
  * Created by Durgaprasad Budhwani on 1/2/2016.
  */
 
-"use strict";
+'use strict';
+
 import EventEmitter from 'EventEmitter';
 let eventEmitter = new EventEmitter();
 
 let loaderHandler = {
-  getEventEmitter: function(){
+  getEventEmitter () {
     return eventEmitter;
   },
-
-  showLoader: function(title){
-    eventEmitter.emit('changeLoadingEffect', {title : title, isVisible : true});
+  hideLoader () {
+    eventEmitter.emit('changeLoadingEffect', {isVisible: false});
   },
-
-  hideLoader: function(title){
-    eventEmitter.emit('changeLoadingEffect', {title : title, isVisible : false});
+  showLoader (title) {
+    eventEmitter.emit('changeLoadingEffect', {title, isVisible: true});
   }
 };
 

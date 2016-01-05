@@ -15,8 +15,11 @@
     "react-component",
     "react-native"
   ],
-  "peerDependencies": {
-    "react-native": "^0.17.0"
+  "devDependencies":{
+    "babel-eslint": "^4.1.6",
+    "eslint": "^1.10.3",
+    "eslint-loader": "^1.1.1",
+    "eslint-plugin-react": "^3.11.2"
   },
   "repository": {
     "type": "git",

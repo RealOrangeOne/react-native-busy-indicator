@@ -4,18 +4,18 @@
 
 'use strict';
 
-var React = require('react-native');
-var Subscribable = require('Subscribable');
-var loaderHandler = require('./LoaderHandler');
+import React from 'react-native';
+import Subscribable from 'Subscribable';
+import loaderHandler  from './LoaderHandler';
 
-var {
+let {
   StyleSheet,
   View,
   Text,
   ActivityIndicatorIOS
   } = React;
 
-var styles = StyleSheet.create({
+let styles = StyleSheet.create({
   container: {
     position: 'absolute',
     backgroundColor: 'rgba(0,0,0,0.3)',
@@ -35,26 +35,17 @@ var styles = StyleSheet.create({
   }
 });
 
-var BusyIndicator = React.createClass({
+let BusyIndicator = React.createClass({
+  propTypes: {
+    color: React.PropTypes.string,
+    overlayColor: React.PropTypes.string,
+    overlayHeight: React.PropTypes.number,
+    overlayWidth: React.PropTypes.number,
+    text: React.PropTypes.string,
+    textColor: React.PropTypes.string,
+    textFontSize: React.PropTypes.number
+  },
   mixins: [Subscribable.Mixin],
-
-  componentDidMount: function () {
-    this.addListenerOn(loaderHandler.getEventEmitter(), 'changeLoadingEffect', this.changeLoadingEffect, null);
-  },
-
-  getInitialState() {
-    return {
-      isVisible: false
-    };
-  },
-
-  changeLoadingEffect(state) {
-    console.log(state);
-    this.setState({
-      isVisible: state.isVisible,
-      text: state.title != null ? state.title :  'Please wait...'
-    });
-  },
 
   getDefaultProps() {
     return {
@@ -62,15 +53,32 @@ var BusyIndicator = React.createClass({
       overlayWidth: 120,
       overlayHeight: 100,
       overlayColor: '#333333',
-      color: "#f5f5f5",
+      color: '#f5f5f5',
       text: 'Please wait...',
       textColor: '#f5f5f5',
       textFontSize: 14
     };
   },
 
+  getInitialState() {
+    return {
+      isVisible: false
+    };
+  },
+  componentDidMount () {
+    this.addListenerOn(loaderHandler.getEventEmitter(), 'changeLoadingEffect', this.changeLoadingEffect, null);
+  },
+
+  changeLoadingEffect(state) {
+    this.setState({
+      isVisible: state.isVisible,
+      text: state.title != null ? state.title : 'Please wait...'
+    });
+  },
+
+
   render() {
-    var customStyles = StyleSheet.create({
+    let customStyles = StyleSheet.create({
       overlay: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -88,27 +96,20 @@ var BusyIndicator = React.createClass({
     });
 
     if (!this.state.isVisible) {
-      return (<View />)
+      return (<View />);
     } else {
       return (
         <View style={[styles.container]}>
           <View style={customStyles.overlay}>
-            <ActivityIndicatorIOS color={this.props.color} size="small" style={styles.progressBar}/>
-            <Text style={customStyles.text} numberOfLines={1}>{this.state.text}</Text>
+            <ActivityIndicatorIOS color={this.props.color}
+                                  size="small"
+                                  style={styles.progressBar}/>
+            <Text numberOfLines={1}
+                  style={customStyles.text}>{this.state.text}</Text>
           </View>
         </View>
-      )
+      );
     }
-  },
-
-  propTypes: {
-    color: React.PropTypes.string,
-    overlayWidth: React.PropTypes.number,
-    overlayHeight: React.PropTypes.number,
-    overlayColor: React.PropTypes.string,
-    text: React.PropTypes.string,
-    textColor: React.PropTypes.string,
-    textFontSize: React.PropTypes.number
   }
 });
 
