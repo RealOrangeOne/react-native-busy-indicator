@@ -2,17 +2,15 @@
  * Created by Durgaprasad Budhwani on 1/2/2016.
  */
 
-'use strict';
-
 import React from 'react-native';
 import Subscribable from 'Subscribable';
 import loaderHandler  from './LoaderHandler';
+import Loading  from './loading';
 
 let {
   StyleSheet,
   View,
-  Text,
-  ActivityIndicatorIOS
+  Text
   } = React;
 
 let styles = StyleSheet.create({
@@ -70,6 +68,7 @@ let BusyIndicator = React.createClass({
   },
 
   changeLoadingEffect(state) {
+    //noinspection JSUnresolvedFunction
     this.setState({
       isVisible: state.isVisible,
       text: state.title != null ? state.title : 'Please wait...'
@@ -101,9 +100,9 @@ let BusyIndicator = React.createClass({
       return (
         <View style={[styles.container]}>
           <View style={customStyles.overlay}>
-            <ActivityIndicatorIOS color={this.props.color}
-                                  size="small"
-                                  style={styles.progressBar}/>
+            <Loading color={this.props.color}
+                     size="small"
+                     style={styles.progressBar}/>
             <Text numberOfLines={1}
                   style={customStyles.text}>{this.state.text}</Text>
           </View>

@@ -2,8 +2,6 @@
  * Created by Durgaprasad Budhwani on 1/2/2016.
  */
 
-'use strict';
-
 import EventEmitter from 'EventEmitter';
 let eventEmitter = new EventEmitter();
 
