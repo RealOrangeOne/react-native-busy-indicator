@@ -2,18 +2,16 @@
  * Created by Durgaprasad Budhwani on 1/2/2016.
  */
 
-import React from 'react-native';
-import { DeviceEventEmitter } from 'react-native';
-import loaderHandler  from './LoaderHandler';
+import React, { DeviceEventEmitter } from 'react-native';
 import Loading  from './loading';
 
-let {
+const {
   StyleSheet,
   View,
   Text
 } = React;
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     backgroundColor: 'rgba(0,0,0,0.3)',
@@ -33,7 +31,7 @@ let styles = StyleSheet.create({
   }
 });
 
-let BusyIndicator = React.createClass({
+const BusyIndicator = React.createClass({
   propTypes: {
     color: React.PropTypes.string,
     overlayColor: React.PropTypes.string,
@@ -68,7 +66,7 @@ let BusyIndicator = React.createClass({
 
   componentDidUnmount() {
     this.emitter.remove();
-  }
+  },
 
   changeLoadingEffect(state) {
     this.setState({
@@ -79,7 +77,7 @@ let BusyIndicator = React.createClass({
 
 
   render() {
-    let customStyles = StyleSheet.create({
+    const customStyles = StyleSheet.create({
       overlay: {
         alignItems: 'center',
         justifyContent: 'center',
