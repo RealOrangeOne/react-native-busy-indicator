@@ -64,7 +64,7 @@ const BusyIndicator = React.createClass({
     this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect, null);
   },
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     this.emitter.remove();
   },
 
