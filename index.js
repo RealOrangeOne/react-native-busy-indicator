@@ -3,7 +3,7 @@
  */
 
 import React from 'react-native';
-import Subscribable from 'Subscribable';
+import { DeviceEventEmitter } from 'react-native';
 import loaderHandler  from './LoaderHandler';
 import Loading  from './loading';
 
@@ -11,7 +11,7 @@ let {
   StyleSheet,
   View,
   Text
-  } = React;
+} = React;
 
 let styles = StyleSheet.create({
   container: {
@@ -43,7 +43,6 @@ let BusyIndicator = React.createClass({
     textColor: React.PropTypes.string,
     textFontSize: React.PropTypes.number
   },
-  mixins: [Subscribable.Mixin],
 
   getDefaultProps() {
     return {
@@ -64,11 +63,14 @@ let BusyIndicator = React.createClass({
     };
   },
   componentDidMount () {
-    this.addListenerOn(loaderHandler.getEventEmitter(), 'changeLoadingEffect', this.changeLoadingEffect, null);
+    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect, null);
   },
 
+  componentDidUnmount() {
+    this.emitter.remove();
+  }
+
   changeLoadingEffect(state) {
-    //noinspection JSUnresolvedFunction
     this.setState({
       isVisible: state.isVisible,
       text: state.title != null ? state.title : 'Please wait...'
@@ -113,5 +115,3 @@ let BusyIndicator = React.createClass({
 });
 
 module.exports = BusyIndicator;
-
-

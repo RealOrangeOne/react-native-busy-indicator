@@ -2,18 +2,14 @@
  * Created by Durgaprasad Budhwani on 1/2/2016.
  */
 
-import EventEmitter from 'EventEmitter';
-let eventEmitter = new EventEmitter();
+import { DeviceEventEmitter } from 'react-native';
 
 let loaderHandler = {
-  getEventEmitter () {
-    return eventEmitter;
-  },
   hideLoader () {
-    eventEmitter.emit('changeLoadingEffect', {isVisible: false});
+    DeviceEventEmitter.emit('changeLoadingEffect', {isVisible: false});
   },
   showLoader (title) {
-    eventEmitter.emit('changeLoadingEffect', {title, isVisible: true});
+    DeviceEventEmitter.emit('changeLoadingEffect', {title, isVisible: true});
   }
 };
 
