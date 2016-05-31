@@ -2,7 +2,8 @@
  * Created by Durgaprasad Budhwani on 1/2/2016.
  */
 
-import React, { DeviceEventEmitter } from 'react-native';
+import React from 'react';
+import { DeviceEventEmitter } from 'react-native';
 import Loading  from './loading';
 
 const {
