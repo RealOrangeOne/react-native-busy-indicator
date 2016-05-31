@@ -3,14 +3,14 @@
  */
 
 import React from 'react';
-import { DeviceEventEmitter } from 'react-native';
 import Loading  from './loading';
 
-const {
+import {
   StyleSheet,
   View,
-  Text
-} = React;
+  Text,
+  DeviceEventEmitter
+} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
