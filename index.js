@@ -2,18 +2,17 @@
  * Created by Durgaprasad Budhwani on 1/2/2016.
  */
 
-import React from 'react-native';
-import Subscribable from 'Subscribable';
-import loaderHandler  from './LoaderHandler';
+import React from 'react';
 import Loading  from './loading';
 
-let {
+import {
   StyleSheet,
   View,
-  Text
-  } = React;
+  Text,
+  DeviceEventEmitter
+} from 'react-native';
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     backgroundColor: 'rgba(0,0,0,0.3)',
@@ -33,7 +32,7 @@ let styles = StyleSheet.create({
   }
 });
 
-let BusyIndicator = React.createClass({
+const BusyIndicator = React.createClass({
   propTypes: {
     color: React.PropTypes.string,
     overlayColor: React.PropTypes.string,
@@ -43,7 +42,6 @@ let BusyIndicator = React.createClass({
     textColor: React.PropTypes.string,
     textFontSize: React.PropTypes.number
   },
-  mixins: [Subscribable.Mixin],
 
   getDefaultProps() {
     return {
@@ -64,11 +62,14 @@ let BusyIndicator = React.createClass({
     };
   },
   componentDidMount () {
-    this.addListenerOn(loaderHandler.getEventEmitter(), 'changeLoadingEffect', this.changeLoadingEffect, null);
+    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect, null);
+  },
+
+  componentWillUnmount() {
+    this.emitter.remove();
   },
 
   changeLoadingEffect(state) {
-    //noinspection JSUnresolvedFunction
     this.setState({
       isVisible: state.isVisible,
       text: state.title != null ? state.title : 'Please wait...'
@@ -77,7 +78,7 @@ let BusyIndicator = React.createClass({
 
 
   render() {
-    let customStyles = StyleSheet.create({
+    const customStyles = StyleSheet.create({
       overlay: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -113,5 +114,3 @@ let BusyIndicator = React.createClass({
 });
 
 module.exports = BusyIndicator;
-
-

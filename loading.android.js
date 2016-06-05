@@ -2,7 +2,8 @@
  * Created by Durgaprasad Budhwani on 1/5/2016.
  */
 
-import React, {ProgressBarAndroid} from 'react-native';
+import React from 'react';
+import { ProgressBarAndroid } from 'react-native';
 
 export default class Loading extends React.Component {
   static propTypes = {
