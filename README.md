@@ -1,6 +1,6 @@
 # react-native-busy-indicator
 [![npm version](https://badge.fury.io/js/react-native-busy-indicator.svg)](https://badge.fury.io/js/react-native-busy-indicator)
-[![Build Status](https://travis-ci.org/Durgaprasad-Budhwani/react-native-busy-indicator.svg?branch=master)](https://travis-ci.org/Durgaprasad-Budhwani/react-native-busy-indicator)
+[![Circle CI](https://circleci.com/gh/RealOrangeOne/react-native-busy-indicator.svg)](https://circleci.com/gh/RealOrangeOne/react-native-busy-indicator)
 [![NPM downloads](http://img.shields.io/npm/dm/react-native-busy-indicator.svg?style=flat-square)](https://www.npmjs.com/package/react-native-busy-indicator)
 
 ## Install
