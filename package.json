@@ -31,5 +31,8 @@
     "url": "git+ssh://git@github.com:Durgaprasad-Budhwani/react-native-busy-indicator.git"
   },
   "author": "Durgaprasad Budhwani",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "^0.25.0"
+  }
 }
