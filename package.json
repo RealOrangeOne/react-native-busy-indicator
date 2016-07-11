@@ -3,6 +3,10 @@
   "version": "1.0.7",
   "main": "index.js",
   "description": "A simple busy indicator which can be trigger from any child or navigated page in react native application",
+  "scripts": {
+    "lint": "eslint index.js LoaderHandler.js loading.android.js loading.ios.js",
+    "test": "npm run lint"
+  },
   "keywords": [
     "react",
     "native",
@@ -16,10 +20,11 @@
     "react-native"
   ],
   "devDependencies":{
-    "babel-eslint": "=4.1.6",
+    "babel-eslint": "=4.1.7",
+    "babel-preset-react-native": "=1.8.0",
     "eslint": "=1.10.3",
-    "eslint-loader": "=1.1.1",
-    "eslint-plugin-react": "=3.11.2"
+    "eslint-plugin-react": "=3.14.0",
+    "eslint-plugin-react-native": "=1.0.2"
   },
   "repository": {
     "type": "git",

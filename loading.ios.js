@@ -2,11 +2,6 @@ import React from 'react';
 import { ActivityIndicatorIOS } from 'react-native';
 
 export default class Loading extends React.Component {
-  static propTypes = {
-    color: React.PropTypes.string,
-    style: React.PropTypes.any
-  };
-
   setNativeProps (nativeProps) {
     this._root.setNativeProps(nativeProps);
   }
@@ -15,9 +10,9 @@ export default class Loading extends React.Component {
     return (
       <ActivityIndicatorIOS
         color={this.props.color}
+        ref={c => this._root = c}
         size="small"
         style={this.props.style}
-        ref={c => this._root = c}
       />
     );
   }
