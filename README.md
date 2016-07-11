@@ -9,7 +9,7 @@ npm install react-native-busy-indicator --save
 ```
 
 ## Usage
-Keep <BusyIndicator /> component at root level and at the last inside view.
+Place the indicator component as close to the root as possible, outside your other view components
 
 ```js
 const BusyIndicator = require('react-native-busy-indicator');
@@ -25,21 +25,18 @@ const YourComponent = React.createClass({
   }
 ```
 
-### Showing the BusyIndicator
-Showing busy indicator can be called from any other page with the help of loaderHandler provided tag should be placed at root level.
+### Show / Hide loader
+Toggling the component can be done from any file, provided the component has already been placed and rendered.
 
 ```js
-var loaderHandler = require('react-native-busy-indicator/LoaderHandler');
-loaderHandler.showLoader("Loading"); // 'Loading' is the text
+const loaderHandler = require('react-native-busy-indicator/LoaderHandler');
+
+loaderHandler.showLoader("Loading"); // Show indicator with message 'loading'
+
+loaderHandler.hideLoader();  // Hide the loader
 ```
 
-### Hiding the BusyIndicator
-```js
-var loaderHandler = require('react-native-busy-indicator/LoaderHandler');
-loaderHandler.hideLoader();
-```
-
-## Properties
+## Component Properties
 
 | Prop | Type | Description |
 |---|---|---|
@@ -54,10 +51,6 @@ loaderHandler.hideLoader();
 ## Demo
 
 ![Demo](https://raw.githubusercontent.com/RealOrangeOne/react-native-busy-indicator/master/demo.gif)
-
-## Example
-
-Check full example in the `Example` folder.
 
 ## License
 
