@@ -1,5 +1,7 @@
-# react-native-busy-indicator 
-[![npm version](https://badge.fury.io/js/react-native-busy-indicator.svg)](https://badge.fury.io/js/react-native-busy-indicator) [![Requirements Status](https://requires.io/github/Durgaprasad-Budhwani/react-native-busy-indicator/requirements.svg?branch=master)](https://requires.io/github/Durgaprasad-Budhwani/react-native-busy-indicator/requirements/?branch=master) [![Build Status](https://travis-ci.org/Durgaprasad-Budhwani/react-native-busy-indicator.svg?branch=master)](https://travis-ci.org/Durgaprasad-Budhwani/react-native-busy-indicator) [![NPM downloads](http://img.shields.io/npm/dm/react-native-busy-indicator.svg?style=flat-square)](https://www.npmjs.com/package/react-native-busy-indicator) [![Code Climate](https://codeclimate.com/github/Durgaprasad-Budhwani/react-native-busy-indicator/badges/gpa.svg)](https://codeclimate.com/github/Durgaprasad-Budhwani/react-native-busy-indicator)
+# react-native-busy-indicator
+[![npm version](https://badge.fury.io/js/react-native-busy-indicator.svg)](https://badge.fury.io/js/react-native-busy-indicator)
+[![Build Status](https://travis-ci.org/Durgaprasad-Budhwani/react-native-busy-indicator.svg?branch=master)](https://travis-ci.org/Durgaprasad-Budhwani/react-native-busy-indicator)
+[![NPM downloads](http://img.shields.io/npm/dm/react-native-busy-indicator.svg?style=flat-square)](https://www.npmjs.com/package/react-native-busy-indicator)
 
 ## Install
 ```shell
@@ -10,18 +12,16 @@ npm install react-native-busy-indicator --save
 Keep <BusyIndicator /> component at root level and at the last inside view.
 
 ```js
-var BusyIndicator = require('react-native-busy-indicator');
+const BusyIndicator = require('react-native-busy-indicator');
 
-var YourComponent = React.createClass({
-
-  ...
+const YourComponent = React.createClass({
   render() {
     return (
       <View>
-        ... 
-        <BusyIndicator />  
+        ...
+        <BusyIndicator />
       </View>
-    );  
+    );
   }
 ```
 
@@ -29,18 +29,14 @@ var YourComponent = React.createClass({
 Showing busy indicator can be called from any other page with the help of loaderHandler provided <BusyIndicator /> tag should be placed at root level.
 
 ```js
-  var loaderHandler = require('react-native-busy-indicator/LoaderHandler');
-  
-  
-  loaderHandler.showLoader("Loading"); // 'Loading' is title
+var loaderHandler = require('react-native-busy-indicator/LoaderHandler');
+loaderHandler.showLoader("Loading"); // 'Loading' is the text
 ```
 
 ### Hiding the BusyIndicator
 ```js
-  var loaderHandler = require('react-native-busy-indicator/LoaderHandler');
-    
-    
-    loaderHandler.hideLoader();
+var loaderHandler = require('react-native-busy-indicator/LoaderHandler');
+loaderHandler.hideLoader();
 ```
 
 ## Properties
@@ -51,7 +47,7 @@ Showing busy indicator can be called from any other page with the help of loader
 |**`overlayWidth`**|`number`|overlay width|
 |**`overlayHeight`**|`number`|overlay height|
 |**`overlayColor`**|`string`|overlay color|
-|**`text`**|`string`|text. defaults `Please wait...`|
+|**`text`**|`string`|text. Default: `Please wait...`|
 |**`textColor`**|`string`| text color|
 |**`textFontSize`**|`number`|text font size|
 
@@ -61,15 +57,8 @@ Showing busy indicator can be called from any other page with the help of loader
 
 ## Example
 
-Check full example in the `Example` folder. 
-
-## Tools
-
-- **IDE** - [IntelliJ IDEA ](https://www.jetbrains.com/idea/ "IntelliJ IDEA")
-- **Emulator** - [Genymotion](https://www.genymotion.com/ "genymotion")
+Check full example in the `Example` folder.
 
 ## License
 
 [MIT License](http://opensource.org/licenses/mit-license.html)
-
-
