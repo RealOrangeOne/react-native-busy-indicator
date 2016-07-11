@@ -1,6 +1,6 @@
 {
   "name": "react-native-busy-indicator",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "index.js",
   "description": "A simple busy indicator which can be trigger from any child or navigated page in react native application",
   "scripts": {
@@ -33,6 +33,6 @@
   "author": "Durgaprasad Budhwani",
   "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.25.0"
+    "react-native":">=0.25.0"
   }
 }
