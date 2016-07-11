@@ -1,7 +1,3 @@
-/**
- * Created by Durgaprasad Budhwani on 1/2/2016.
- */
-
 import React from 'react';
 import Loading  from './loading';
 
@@ -101,11 +97,13 @@ const BusyIndicator = React.createClass({
       return (
         <View style={[styles.container]}>
           <View style={customStyles.overlay}>
-            <Loading color={this.props.color}
-                     size="small"
-                     style={styles.progressBar}/>
-            <Text numberOfLines={1}
-                  style={customStyles.text}>{this.state.text}</Text>
+            <Loading
+              color={this.props.color}
+              size="small"
+              style={styles.progressBar}/>
+            <Text numberOfLines={1} style={customStyles.text}>
+              {this.state.text}
+            </Text>
           </View>
         </View>
       );

@@ -1,7 +1,3 @@
-/**
- * Created by Durgaprasad Budhwani on 1/2/2016.
- */
-
 import { DeviceEventEmitter } from 'react-native';
 
 const loaderHandler = {

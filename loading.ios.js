@@ -1,7 +1,3 @@
-/**
- * Created by Durgaprasad Budhwani on 1/5/2016.
- */
-
 import React from 'react';
 import { ActivityIndicatorIOS } from 'react-native';
 
@@ -16,9 +12,13 @@ export default class Loading extends React.Component {
   }
 
   render () {
-    return (<ActivityIndicatorIOS color={this.props.color}
-                                  size="small"
-                                  style={this.props.style}
-                                  ref={c => this._root = c}/>);
+    return (
+      <ActivityIndicatorIOS
+        color={this.props.color}
+        size="small"
+        style={this.props.style}
+        ref={c => this._root = c}
+      />
+    );
   }
 }
