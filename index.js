@@ -98,8 +98,8 @@ const BusyIndicator = React.createClass({
         <View style={[styles.container]}>
           <View style={customStyles.overlay}>
             <ActivityIndicator
-              size="small"
               color={this.props.color}
+              size="small"              
               style={styles.progressBar}/>
             <Text numberOfLines={1} style={customStyles.text}>
               {this.state.text}
