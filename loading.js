@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicatorIOS } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 
 export default class Loading extends React.Component {
   setNativeProps (nativeProps) {
@@ -8,10 +8,10 @@ export default class Loading extends React.Component {
 
   render () {
     return (
-      <ActivityIndicatorIOS
+      <ActivityIndicator
         color={this.props.color}
         ref={c => this._root = c}
-        size="small"
+        size="large"
         style={this.props.style}
       />
     );
