@@ -1,11 +1,11 @@
 import React from 'react';
-import Loading  from './loading';
 
 import {
   StyleSheet,
   View,
   Text,
-  DeviceEventEmitter
+  DeviceEventEmitter,
+  ActivityIndicator
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -97,7 +97,8 @@ const BusyIndicator = React.createClass({
       return (
         <View style={[styles.container]}>
           <View style={customStyles.overlay}>
-            <Loading
+            <ActivityIndicator
+              size="small"
               color={this.props.color}
               style={styles.progressBar}/>
             <Text numberOfLines={1} style={customStyles.text}>
