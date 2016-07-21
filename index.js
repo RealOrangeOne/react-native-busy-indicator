@@ -102,21 +102,21 @@ const BusyIndicator = React.createClass({
   render() {
     if (!this.state.isVisible) {
       return (<View />);
-    } else {
-      return (
-        <View style={[styles.container]}>
-          <View style={[styles.overlay, this.customStyles.overlay]}>
-            <ActivityIndicator
-              color={this.props.color}
-              size="small"
-              style={styles.progressBar}/>
-            <Text numberOfLines={1} style={[styles.text, this.customStyles.text]}>
-              {this.state.text}
-            </Text>
-          </View>
-        </View>
-      );
     }
+
+    return (
+      <View style={[styles.container]}>
+        <View style={[styles.overlay, this.customStyles.overlay]}>
+          <ActivityIndicator
+            color={this.props.color}
+            size="small"
+            style={styles.progressBar}/>
+          <Text numberOfLines={1} style={[styles.text, this.customStyles.text]}>
+            {this.state.text}
+          </Text>
+        </View>
+      </View>
+    );
   }
 });
 
