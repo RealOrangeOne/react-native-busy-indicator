@@ -33,6 +33,7 @@
     "jsdom": "=9.4.1",
     "mocha": "=2.5.3",
     "react": "=15.1.0",
+    "react-dom": "=15.1.0",
     "react-native": "=0.26.0",
     "react-native-mock": "=0.2.5",
     "sinon": "=1.17.4",
