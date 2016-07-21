@@ -25,6 +25,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10
+  },
+  overlay: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    padding: 10
+  },
+  text: {
+    marginTop: 8
   }
 });
 
@@ -60,6 +69,21 @@ const BusyIndicator = React.createClass({
       text: this.props.text
     };
   },
+
+  componentWillMount() {
+    this.customStyles = {
+      overlay: {
+        backgroundColor: this.props.overlayColor,
+        width: this.props.overlayWidth,
+        height: this.props.overlayHeight
+      },
+      text: {
+        color: this.props.textColor,
+        fontSize: this.props.textFontSize
+      }
+    }
+  },
+
   componentDidMount () {
     this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect.bind(this));
   },
@@ -77,34 +101,17 @@ const BusyIndicator = React.createClass({
 
 
   render() {
-    const customStyles = StyleSheet.create({
-      overlay: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 10,
-        padding: 10,
-        backgroundColor: this.props.overlayColor,
-        width: this.props.overlayWidth,
-        height: this.props.overlayHeight
-      },
-      text: {
-        color: this.props.textColor,
-        fontSize: this.props.textFontSize,
-        marginTop: 8
-      }
-    });
-
     if (!this.state.isVisible) {
       return (<View />);
     } else {
       return (
         <View style={[styles.container]}>
-          <View style={customStyles.overlay}>
+          <View style={[styles.overlay, this.customStyles.overlay]}>
             <ActivityIndicator
               color={this.props.color}
               size="small"
               style={styles.progressBar}/>
-            <Text numberOfLines={1} style={customStyles.text}>
+            <Text numberOfLines={1} style={[styles.text, this.customStyles.text]}>
               {this.state.text}
             </Text>
           </View>
