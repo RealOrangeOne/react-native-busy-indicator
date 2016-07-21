@@ -56,11 +56,12 @@ const BusyIndicator = React.createClass({
 
   getInitialState() {
     return {
-      isVisible: this.props.startVisible
+      isVisible: this.props.startVisible,
+      text: this.props.text
     };
   },
   componentDidMount () {
-    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect, null);
+    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect.bind(this));
   },
 
   componentWillUnmount() {
@@ -70,7 +71,7 @@ const BusyIndicator = React.createClass({
   changeLoadingEffect(state) {
     this.setState({
       isVisible: state.isVisible,
-      text: state.title ? state.title : 'Please wait...'
+      text: state.title ? state.title : this.props.text
     });
   },
 
