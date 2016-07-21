@@ -34,6 +34,7 @@ const BusyIndicator = React.createClass({
     overlayColor: React.PropTypes.string,
     overlayHeight: React.PropTypes.number,
     overlayWidth: React.PropTypes.number,
+    startVisible: React.PropTypes.bool,
     text: React.PropTypes.string,
     textColor: React.PropTypes.string,
     textFontSize: React.PropTypes.number
@@ -46,6 +47,7 @@ const BusyIndicator = React.createClass({
       overlayHeight: 100,
       overlayColor: '#333333',
       color: '#f5f5f5',
+      startVisible: false,
       text: 'Please wait...',
       textColor: '#f5f5f5',
       textFontSize: 14
@@ -54,7 +56,7 @@ const BusyIndicator = React.createClass({
 
   getInitialState() {
     return {
-      isVisible: false
+      isVisible: this.props.startVisible
     };
   },
   componentDidMount () {
@@ -68,7 +70,7 @@ const BusyIndicator = React.createClass({
   changeLoadingEffect(state) {
     this.setState({
       isVisible: state.isVisible,
-      text: state.title != null ? state.title : 'Please wait...'
+      text: state.title ? state.title : 'Please wait...'
     });
   },
 
