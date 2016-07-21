@@ -2,14 +2,17 @@
   "parser": "babel-eslint",
   "env": {
     "node": true,
-    "es6": true
+    "es6": true,
+    "mocha": true
   },
   "plugins": [
-    "react"
+    "react",
+    "react-native"
   ],
   "root": true,
   "rules": {
     "jsx-quotes": 2,
+    "no-unused-vars": [2, {"vars": "all", "args": "none"}],
     "react/jsx-boolean-value": 2,
     "react/jsx-curly-spacing": 2,
     "react/jsx-no-duplicate-props": 2,
@@ -29,7 +32,8 @@
     "react/require-extension": 2,
     "react/self-closing-comp": 2,
     "react/sort-comp": 2,
-    "react/wrap-multilines": 2
+    "react/wrap-multilines": 2,
+    "react-native/no-unused-styles": 2
   },
   "extends": "eslint:recommended"
 }
