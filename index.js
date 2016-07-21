@@ -53,7 +53,7 @@ const BusyIndicator = React.createClass({
     return {
       overlayWidth: 120,
       overlayHeight: 100,
-      overlayColor: '#333333',
+      overlayColor: 'rgba(51,51,51, 0.8)',
       color: '#f5f5f5',
       startVisible: false,
       text: 'Please wait...',
