@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint index.js LoaderHandler.js",
     "mocha": "mocha --require babel-core/register scripts/test-helper.js --bail 'tests/**/*.test.js'",
-    "test": "npm run lint"
+    "test": "npm run lint && npm run mocha"
   },
   "keywords": [
     "react",
