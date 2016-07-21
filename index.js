@@ -51,7 +51,6 @@ const BusyIndicator = React.createClass({
 
   getDefaultProps() {
     return {
-      isDismissible: false,
       overlayWidth: 120,
       overlayHeight: 100,
       overlayColor: '#333333',
