@@ -60,7 +60,7 @@ const BusyIndicator = React.createClass({
       text: 'Please wait...',
       textColor: '#f5f5f5',
       textFontSize: 14,
-      size: 'small'
+      size: 'large'
     };
   },
 
