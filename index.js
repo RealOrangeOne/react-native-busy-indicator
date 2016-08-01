@@ -25,6 +25,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10
+  },
+  overlay: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    padding: 10
+  },
+  text: {
+    marginTop: 8
   }
 });
 
@@ -37,30 +46,47 @@ const BusyIndicator = React.createClass({
     startVisible: React.PropTypes.bool,
     text: React.PropTypes.string,
     textColor: React.PropTypes.string,
-    textFontSize: React.PropTypes.number
+    textFontSize: React.PropTypes.number,
+    size: React.PropTypes.oneOf(['small', 'large'])
   },
 
   getDefaultProps() {
     return {
-      isDismissible: false,
       overlayWidth: 120,
       overlayHeight: 100,
-      overlayColor: '#333333',
+      overlayColor: 'rgba(51,51,51, 0.8)',
       color: '#f5f5f5',
       startVisible: false,
       text: 'Please wait...',
       textColor: '#f5f5f5',
-      textFontSize: 14
+      textFontSize: 14,
+      size: 'large'
     };
   },
 
   getInitialState() {
     return {
-      isVisible: this.props.startVisible
+      isVisible: this.props.startVisible,
+      text: this.props.text
     };
   },
+
+  componentWillMount() {
+    this.customStyles = {
+      overlay: {
+        backgroundColor: this.props.overlayColor,
+        width: this.props.overlayWidth,
+        height: this.props.overlayHeight
+      },
+      text: {
+        color: this.props.textColor,
+        fontSize: this.props.textFontSize
+      }
+    }
+  },
+
   componentDidMount () {
-    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect, null);
+    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect);
   },
 
   componentWillUnmount() {
@@ -70,46 +96,29 @@ const BusyIndicator = React.createClass({
   changeLoadingEffect(state) {
     this.setState({
       isVisible: state.isVisible,
-      text: state.title ? state.title : 'Please wait...'
+      text: state.title ? state.title : this.props.text
     });
   },
 
 
   render() {
-    const customStyles = StyleSheet.create({
-      overlay: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 10,
-        padding: 10,
-        backgroundColor: this.props.overlayColor,
-        width: this.props.overlayWidth,
-        height: this.props.overlayHeight
-      },
-      text: {
-        color: this.props.textColor,
-        fontSize: this.props.textFontSize,
-        marginTop: 8
-      }
-    });
-
     if (!this.state.isVisible) {
       return (<View />);
-    } else {
-      return (
-        <View style={[styles.container]}>
-          <View style={customStyles.overlay}>
-            <ActivityIndicator
-              color={this.props.color}
-              size="small"
-              style={styles.progressBar}/>
-            <Text numberOfLines={1} style={customStyles.text}>
-              {this.state.text}
-            </Text>
-          </View>
-        </View>
-      );
     }
+
+    return (
+      <View style={[styles.container]}>
+        <View style={[styles.overlay, this.customStyles.overlay]}>
+          <ActivityIndicator
+            color={this.props.color}
+            size={this.props.size}
+            style={styles.progressBar}/>
+          <Text numberOfLines={1} style={[styles.text, this.customStyles.text]}>
+            {this.state.text}
+          </Text>
+        </View>
+      </View>
+    );
   }
 });
 
