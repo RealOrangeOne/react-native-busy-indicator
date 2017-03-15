@@ -99,7 +99,7 @@ const BusyIndicator = React.createClass({
       }
     });
 
-    if (!this.state.isVisible) {      
+    if (!this.state.isVisible) {
       return (<View style={[styles.nocontainer]} />);
     } else {
       return (
