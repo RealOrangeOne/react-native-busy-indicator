@@ -7,7 +7,7 @@ import {
   DeviceEventEmitter,
   ActivityIndicator
 } from 'react-native';
-const styles_bi = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     backgroundColor: 'rgba(0,0,0,0.3)',
@@ -26,15 +26,9 @@ const styles_bi = StyleSheet.create({
     padding: 10
   },
   nocontainer: {
-    position: 'absolute',
-    //backgroundColor: 'rgba(0,0,0,0.6)',
-    //justifyContent: 'center',
-    //alignItems: 'center',
-    top: 0,
-    //bottom: 0,
-    left: 0,
-    //right: 0,
-    //flex: 0,
+    position: 'absolute',    
+    top: 0,    
+    left: 0,        
     width:0.001,
     height:0.001
   },
@@ -106,15 +100,15 @@ const BusyIndicator = React.createClass({
     });
 
     if (!this.state.isVisible) {      
-      return (<View style={[styles_bi.nocontainer]} />);
+      return (<View style={[styles.nocontainer]} />);
     } else {
       return (
-        <View style={[styles_bi.container]}>
+        <View style={[styles.container]}>
           <View style={customStyles.overlay}>
             <ActivityIndicator
               color={this.props.color}
               size="small"
-              style={styles_bi.progressBar}/>
+              style={styles.progressBar}/>
             <Text numberOfLines={1} style={customStyles.text}>
               {this.state.text}
             </Text>
