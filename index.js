@@ -7,7 +7,6 @@ import {
   DeviceEventEmitter,
   ActivityIndicator
 } from 'react-native';
-
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
@@ -25,7 +24,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10
-  }
+  },
+  nocontainer: {
+    position: 'absolute',    
+    top: 0,    
+    left: 0,        
+    width:0.001,
+    height:0.001
+  },
 });
 
 const BusyIndicator = React.createClass({
@@ -94,7 +100,7 @@ const BusyIndicator = React.createClass({
     });
 
     if (!this.state.isVisible) {
-      return (<View />);
+      return (<View style={[styles.nocontainer]} />);
     } else {
       return (
         <View style={[styles.container]}>
@@ -112,5 +118,4 @@ const BusyIndicator = React.createClass({
     }
   }
 });
-
 module.exports = BusyIndicator;
