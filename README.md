@@ -47,6 +47,8 @@ loaderHandler.hideLoader();  // Hide the loader
 |**`text`**|`string`|text. Default: `Please wait...`|
 |**`textColor`**|`string`| text color|
 |**`textFontSize`**|`number`|text font size|
+|**`textNumberOfLines`**|`number`| total number of lines does not exceed this number. Default: 1|
+
 
 ## Demo
 

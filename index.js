@@ -43,7 +43,8 @@ const BusyIndicator = React.createClass({
     startVisible: React.PropTypes.bool,
     text: React.PropTypes.string,
     textColor: React.PropTypes.string,
-    textFontSize: React.PropTypes.number
+    textFontSize: React.PropTypes.number,
+    textNumberOfLines: React.PropTypes.number,
   },
 
   getDefaultProps() {
@@ -56,7 +57,8 @@ const BusyIndicator = React.createClass({
       startVisible: false,
       text: 'Please wait...',
       textColor: '#f5f5f5',
-      textFontSize: 14
+      textFontSize: 14,
+      textNumberOfLines:1,
     };
   },
 
@@ -109,7 +111,7 @@ const BusyIndicator = React.createClass({
               color={this.props.color}
               size="small"
               style={styles.progressBar}/>
-            <Text numberOfLines={1} style={customStyles.text}>
+            <Text numberOfLines={this.props.textNumberOfLines} style={customStyles.text}>
               {this.state.text}
             </Text>
           </View>
