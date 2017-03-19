@@ -7,6 +7,7 @@ import {
   DeviceEventEmitter,
   ActivityIndicator
 } from 'react-native';
+
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
@@ -84,6 +85,9 @@ const BusyIndicator = React.createClass({
 
 
   render() {
+    if (!this.state.isVisible) {
+      return (<View style={[styles.nocontainer]} />);
+    }
     const customStyles = StyleSheet.create({
       overlay: {
         alignItems: 'center',
@@ -101,23 +105,20 @@ const BusyIndicator = React.createClass({
       }
     });
 
-    if (!this.state.isVisible) {
-      return (<View style={[styles.nocontainer]} />);
-    } else {
-      return (
-        <View style={[styles.container]}>
-          <View style={customStyles.overlay}>
-            <ActivityIndicator
-              color={this.props.color}
-              size="small"
-              style={styles.progressBar}/>
-            <Text numberOfLines={this.props.textNumberOfLines} style={customStyles.text}>
-              {this.state.text}
-            </Text>
-          </View>
+    return (
+      <View style={[styles.container]}>
+        <View style={customStyles.overlay}>
+          <ActivityIndicator
+            color={this.props.color}
+            size="small"
+            style={styles.progressBar} />
+          <Text numberOfLines={this.props.textNumberOfLines} style={customStyles.text}>
+            {this.state.text}
+          </Text>
         </View>
-      );
-    }
+      </View>
+    );
   }
 });
+
 module.exports = BusyIndicator;
