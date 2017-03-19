@@ -29,9 +29,9 @@ const styles = StyleSheet.create({
     position: 'absolute',    
     top: 0,    
     left: 0,        
-    width:0.001,
-    height:0.001
-  },
+    width: 0.001,
+    height: 0.001
+  }
 });
 
 const BusyIndicator = React.createClass({
@@ -44,7 +44,7 @@ const BusyIndicator = React.createClass({
     text: React.PropTypes.string,
     textColor: React.PropTypes.string,
     textFontSize: React.PropTypes.number,
-    textNumberOfLines: React.PropTypes.number,
+    textNumberOfLines: React.PropTypes.number
   },
 
   getDefaultProps() {
@@ -58,7 +58,7 @@ const BusyIndicator = React.createClass({
       text: 'Please wait...',
       textColor: '#f5f5f5',
       textFontSize: 14,
-      textNumberOfLines:1,
+      textNumberOfLines: 1
     };
   },
 
