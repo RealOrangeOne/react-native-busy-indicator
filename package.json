@@ -4,7 +4,7 @@
   "main": "index.js",
   "description": "A simple busy indicator which can be trigger from any child or navigated page in react native application",
   "scripts": {
-    "lint": "eslint index.js LoaderHandler.js",
+    "lint": "eslint index.js LoaderHandler.js scripts/ tests/",
     "mocha": "mocha --require babel-core/register scripts/test-helper.js --bail 'tests/**/*.test.js'",
     "test": "npm run lint && npm run mocha"
   },
