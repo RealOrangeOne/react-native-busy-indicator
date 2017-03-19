@@ -87,7 +87,7 @@ class BusyIndicator extends React.Component {
         <View style={customStyles.overlay}>
           <ActivityIndicator
             color={this.props.color}
-            size="small"
+            size={this.props.size}
             style={styles.progressBar} />
           <Text numberOfLines={this.props.textNumberOfLines} style={customStyles.text}>
             {this.state.text}
@@ -103,6 +103,7 @@ BusyIndicator.propTypes = {
   overlayColor: React.PropTypes.string,
   overlayHeight: React.PropTypes.number,
   overlayWidth: React.PropTypes.number,
+  size: React.PropTypes.oneOf(['small', 'large']),
   startVisible: React.PropTypes.bool,
   text: React.PropTypes.string,
   textColor: React.PropTypes.string,
@@ -116,6 +117,7 @@ BusyIndicator.defaultProps = {
   overlayHeight: 100,
   overlayColor: '#333333',
   color: '#f5f5f5',
+  size: 'small',
   startVisible: false,
   text: 'Please wait...',
   textColor: '#f5f5f5',
