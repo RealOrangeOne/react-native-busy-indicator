@@ -40,13 +40,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
-    padding: 10,
+    padding: 10
   },
 
   text: {
     marginTop: 8
   }
-
 });
 
 class BusyIndicator extends React.Component {
@@ -74,7 +73,7 @@ class BusyIndicator extends React.Component {
 
   render() {
     if (!this.state.isVisible) {
-      return (<View style={[styles.nocontainer]} />);
+      return (<View style={styles.nocontainer} />);
     }
 
     const customStyles = StyleSheet.create({
@@ -83,21 +82,24 @@ class BusyIndicator extends React.Component {
         width: this.props.overlayWidth,
         height: this.props.overlayHeight
       },
+      
       text: {
         color: this.props.textColor,
-        fontSize: this.props.textFontSize,
-        marginTop: 8
+        fontSize: this.props.textFontSize
       }
     });
 
     return (
-      <View style={[styles.container]}>
-        <View style={customStyles.overlay}>
+      <View style={styles.container}>
+        <View style={[styles.overlay, customStyles.overlay]}>
           <ActivityIndicator
             color={this.props.color}
             size={this.props.size}
             style={styles.progressBar} />
-          <Text numberOfLines={this.props.textNumberOfLines} style={customStyles.text}>
+
+          <Text
+            numberOfLines={this.props.textNumberOfLines}
+            style={[styles.text, customStyles.text]}>
             {this.state.text}
           </Text>
         </View>
