@@ -20,12 +20,14 @@ const styles = StyleSheet.create({
     right: 0,
     flex: 1
   },
+
   progressBar: {
     margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10
   },
+
   nocontainer: {
     position: 'absolute',    
     top: 0,    
@@ -35,59 +37,34 @@ const styles = StyleSheet.create({
   }
 });
 
-const BusyIndicator = React.createClass({
-  propTypes: {
-    color: React.PropTypes.string,
-    overlayColor: React.PropTypes.string,
-    overlayHeight: React.PropTypes.number,
-    overlayWidth: React.PropTypes.number,
-    startVisible: React.PropTypes.bool,
-    text: React.PropTypes.string,
-    textColor: React.PropTypes.string,
-    textFontSize: React.PropTypes.number,
-    textNumberOfLines: React.PropTypes.number
-  },
-
-  getDefaultProps() {
-    return {
-      isDismissible: false,
-      overlayWidth: 120,
-      overlayHeight: 100,
-      overlayColor: '#333333',
-      color: '#f5f5f5',
-      startVisible: false,
-      text: 'Please wait...',
-      textColor: '#f5f5f5',
-      textFontSize: 14,
-      textNumberOfLines: 1
+class BusyIndicator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: props.startVisible
     };
-  },
+  }
 
-  getInitialState() {
-    return {
-      isVisible: this.props.startVisible
-    };
-  },
   componentDidMount () {
-    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect, null);
-  },
+    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect.bind(this));
+  }
 
   componentWillUnmount() {
     this.emitter.remove();
-  },
+  }
 
   changeLoadingEffect(state) {
     this.setState({
       isVisible: state.isVisible,
-      text: state.title ? state.title : 'Please wait...'
+      text: state.title ? state.title : this.props.text
     });
-  },
-
+  }
 
   render() {
     if (!this.state.isVisible) {
       return (<View style={[styles.nocontainer]} />);
     }
+
     const customStyles = StyleSheet.create({
       overlay: {
         alignItems: 'center',
@@ -119,6 +96,31 @@ const BusyIndicator = React.createClass({
       </View>
     );
   }
-});
+}
+
+BusyIndicator.propTypes = {
+  color: React.PropTypes.string,
+  overlayColor: React.PropTypes.string,
+  overlayHeight: React.PropTypes.number,
+  overlayWidth: React.PropTypes.number,
+  startVisible: React.PropTypes.bool,
+  text: React.PropTypes.string,
+  textColor: React.PropTypes.string,
+  textFontSize: React.PropTypes.number,
+  textNumberOfLines: React.PropTypes.number
+};
+
+BusyIndicator.defaultProps = {
+  isDismissible: false,
+  overlayWidth: 120,
+  overlayHeight: 100,
+  overlayColor: '#333333',
+  color: '#f5f5f5',
+  startVisible: false,
+  text: 'Please wait...',
+  textColor: '#f5f5f5',
+  textFontSize: 14,
+  textNumberOfLines: 1
+};
 
 module.exports = BusyIndicator;
