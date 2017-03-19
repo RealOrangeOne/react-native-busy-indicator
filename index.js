@@ -34,7 +34,19 @@ const styles = StyleSheet.create({
     left: 0,        
     width: 0.001,
     height: 0.001
+  },
+
+  overlay: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    padding: 10,
+  },
+
+  text: {
+    marginTop: 8
   }
+
 });
 
 class BusyIndicator extends React.Component {
@@ -67,10 +79,6 @@ class BusyIndicator extends React.Component {
 
     const customStyles = StyleSheet.create({
       overlay: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 10,
-        padding: 10,
         backgroundColor: this.props.overlayColor,
         width: this.props.overlayWidth,
         height: this.props.overlayHeight
