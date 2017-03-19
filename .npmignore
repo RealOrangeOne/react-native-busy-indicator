@@ -1,0 +1,6 @@
+.babelrc
+.eslintrc
+demo.gif
+circle.yml
+tests/
+scripts/
