@@ -12,7 +12,7 @@ npm install react-native-busy-indicator --save
 Place the indicator component as close to the root as possible, outside your other view components
 
 ```js
-const BusyIndicator = require('react-native-busy-indicator');
+import BusyIndicator from "react-native-busy-indicator";
 
 const YourComponent = React.createClass({
   render() {
@@ -29,10 +29,11 @@ const YourComponent = React.createClass({
 Toggling the component can be done from any file, provided the component has already been placed and rendered.
 
 ```js
-const loaderHandler = require('react-native-busy-indicator/LoaderHandler');
+import loaderHandler from "react-native-busy-indicator/LoaderHandler";
 
 loaderHandler.showLoader("Loading"); // Show indicator with message 'Loading'
 loaderHandler.showLoader("Loading More"); // Show indicator with message 'Loading More'
+loaderHandler.showLoader("Loading More", 200); // Show indicator with message 'Loading More' and will auto hide after 200ms
 
 loaderHandler.hideLoader();  // Hide the loader
 ```
