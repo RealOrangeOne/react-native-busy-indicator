@@ -64,7 +64,7 @@ class BusyIndicator extends React.Component {
   }
 
   componentDidMount () {
-    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect.bind(this));         
+    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect.bind(this));
   }
 
   componentWillUnmount() {
