@@ -5,7 +5,8 @@ import {
   View,
   Text,
   DeviceEventEmitter,
-  ActivityIndicator
+  ActivityIndicator,
+  Keyboard
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -52,8 +53,14 @@ class BusyIndicator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: props.startVisible
+      isVisible: props.startVisible,
+      keyboardSpace: 0
     };
+  }
+
+  componentWillMount () {
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.changeKeyboardSpace.bind(this));
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.removeKeyboardSpace.bind(this));
   }
 
   componentDidMount () {
@@ -62,6 +69,21 @@ class BusyIndicator extends React.Component {
 
   componentWillUnmount() {
     this.emitter.remove();
+    this.keyboardDidShowListener.remove();
+    this.keyboardDidHideListener.remove();
+  }
+
+  changeKeyboardSpace(frames){
+    if (!frames.endCoordinates) return;
+    this.setState({
+      keyboardSpace: frames.endCoordinates.height
+    });
+  }
+
+  removeKeyboardSpace(frames){
+    this.setState({
+      keyboardSpace: 0
+    });
   }
 
   changeLoadingEffect(state) {
@@ -90,7 +112,7 @@ class BusyIndicator extends React.Component {
     });
 
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, { bottom: this.state.keyboardSpace }]}>
         <View style={[styles.overlay, customStyles.overlay]}>
           <ActivityIndicator
             color={this.props.color}
