@@ -54,29 +54,33 @@ class BusyIndicator extends React.Component {
     super(props);
     this.state = {
       isVisible: props.startVisible,
-      keyboardSpace: 0,
+      keyboardSpace: 0
     };
   }
 
   componentDidMount () {
     this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect.bind(this));
-    this.keyboardShowEvent = Keyboard.addListener('keyboardDidShow', (frames) => {
-      if (!frames.endCoordinates) return;
-      this.setState({
-        keyboardSpace: frames.endCoordinates.height
-      });
-    });
-    this.keyboardHideEvent = Keyboard.addListener('keyboardDidHide', (frames) => {
-      this.setState({
-        keyboardSpace: 0
-      });
-    });        
+    this.keyboardShowEvent = Keyboard.addListener('keyboardDidShow', this.changeKeyboardSpace.bind(this));
+    this.keyboardHideEvent = Keyboard.addListener('keyboardDidHide', this.removeKeyboardSpace.bind(this));        
   }
 
   componentWillUnmount() {
     this.emitter.remove();
     this.keyboardShowEvent.remove();
     this.keyboardHideEvent.remove();
+  }
+
+  changeKeyboardSpace(frames){
+    if (!frames.endCoordinates) return;
+    this.setState({
+      keyboardSpace: frames.endCoordinates.height
+    });
+  }
+
+  removeKeyboardSpace(frames){
+    this.setState({
+      keyboardSpace: 0
+    });
   }
 
   changeLoadingEffect(state) {
