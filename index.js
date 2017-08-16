@@ -58,16 +58,19 @@ class BusyIndicator extends React.Component {
     };
   }
 
+  componentWillMount () {
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.changeKeyboardSpace.bind(this));
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.removeKeyboardSpace.bind(this));
+  }
+
   componentDidMount () {
-    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect.bind(this));
-    this.keyboardShowEvent = Keyboard.addListener('keyboardDidShow', this.changeKeyboardSpace.bind(this));
-    this.keyboardHideEvent = Keyboard.addListener('keyboardDidHide', this.removeKeyboardSpace.bind(this));        
+    this.emitter = DeviceEventEmitter.addListener('changeLoadingEffect', this.changeLoadingEffect.bind(this));         
   }
 
   componentWillUnmount() {
     this.emitter.remove();
-    this.keyboardShowEvent.remove();
-    this.keyboardHideEvent.remove();
+    this.keyboardDidShowListener.remove();
+    this.keyboardDidHideListener.remove();
   }
 
   changeKeyboardSpace(frames){
