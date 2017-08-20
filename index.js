@@ -92,15 +92,17 @@ class BusyIndicator extends React.Component {
     return (
       <View style={styles.container}>
         <View style={[styles.overlay, customStyles.overlay]}>
+          {this.props.upperContent}
           <ActivityIndicator
             color={this.props.color}
             size={this.props.size}
             style={styles.progressBar} />
-
+          {this.props.middleContent}
           <Text
             numberOfLines={this.props.textNumberOfLines}
             style={[styles.text, customStyles.text]}>
             {this.state.text}
+          {this.props.lowerContent}
           </Text>
         </View>
       </View>
