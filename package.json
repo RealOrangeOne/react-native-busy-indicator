@@ -1,51 +1,55 @@
 {
-  "name": "react-native-busy-indicator",
-  "version": "1.1.0",
-  "main": "index.js",
-  "description": "A simple busy indicator which can be trigger from any child or navigated page in react native application",
-  "scripts": {
-    "lint": "eslint index.js LoaderHandler.js scripts/ tests/",
-    "mocha": "mocha --require babel-core/register scripts/test-helper.js --bail 'tests/**/*.test.js'",
-    "test": "npm run lint && npm run mocha"
-  },
-  "keywords": [
-    "react",
-    "native",
-    "busy",
-    "indicator",
-    "loading",
-    "indicator",
-    "ios",
-    "android",
-    "react-component",
-    "react-native"
-  ],
-  "devDependencies": {
-    "babel-cli": "=6.11.4",
-    "babel-eslint": "=4.1.7",
-    "babel-polyfill": "=6.9.1",
-    "babel-preset-react-native": "=1.8.0",
-    "chai": "=3.5.0",
-    "enzyme": "=2.4.1",
-    "eslint": "=1.10.3",
-    "eslint-plugin-react": "=3.14.0",
-    "eslint-plugin-react-native": "=1.0.2",
-    "jsdom": "=9.4.1",
-    "mocha": "=2.5.3",
-    "react": "=15.1.0",
-    "react-dom": "=15.1.0",
-    "react-native": "=0.26.0",
-    "react-native-mock": "=0.2.5",
-    "sinon": "=1.17.4",
-    "sinon-chai": "=2.8.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RealOrangeOne/react-native-busy-indicator"
-  },
-  "author": "Durgaprasad Budhwani",
-  "license": "MIT",
-  "peerDependencies": {
-    "react-native": ">=0.25.0"
-  }
+	"name": "react-native-busy-indicator",
+	"version": "1.1.0",
+	"main": "index.js",
+	"description":
+		"A simple busy indicator which can be trigger from any child or navigated page in react native application",
+	"scripts": {
+		"lint": "eslint index.js LoaderHandler.js scripts/ tests/",
+		"mocha": "mocha --require babel-core/register scripts/test-helper.js --bail 'tests/**/*.test.js'",
+		"test": "npm run lint && npm run mocha"
+	},
+	"keywords": [
+		"react",
+		"native",
+		"busy",
+		"indicator",
+		"loading",
+		"indicator",
+		"ios",
+		"android",
+		"react-component",
+		"react-native"
+	],
+	"devDependencies": {
+		"babel-cli": "=6.11.4",
+		"babel-eslint": "=4.1.7",
+		"babel-polyfill": "=6.9.1",
+		"babel-preset-react-native": "=1.8.0",
+		"chai": "=3.5.0",
+		"enzyme": "=2.4.1",
+		"eslint": "=1.10.3",
+		"eslint-plugin-react": "=3.14.0",
+		"eslint-plugin-react-native": "=1.0.2",
+		"jsdom": "=9.4.1",
+		"mocha": "=2.5.3",
+		"react": "=15.1.0",
+		"react-dom": "=15.1.0",
+		"react-native": "=0.26.0",
+		"react-native-mock": "=0.2.5",
+		"sinon": "=1.17.4",
+		"sinon-chai": "=2.8.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/RealOrangeOne/react-native-busy-indicator"
+	},
+	"author": "Durgaprasad Budhwani",
+	"license": "MIT",
+	"peerDependencies": {
+		"react-native": ">=0.25.0"
+	},
+	"dependencies": {
+		"prop-types": "^15.5.10"
+	}
 }
