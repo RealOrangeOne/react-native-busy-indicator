@@ -37,7 +37,8 @@
     "react-native": "=0.26.0",
     "react-native-mock": "=0.2.5",
     "sinon": "=1.17.4",
-    "sinon-chai": "=2.8.0"
+    "sinon-chai": "=2.8.0",
+    "prop-types": "^15.6.0"
   },
   "repository": {
     "type": "git",
