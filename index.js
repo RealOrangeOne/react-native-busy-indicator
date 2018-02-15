@@ -109,17 +109,18 @@ class BusyIndicator extends React.Component {
 }
 
 BusyIndicator.propTypes = {
-  color: React.PropTypes.string,
-  overlayColor: React.PropTypes.string,
-  overlayHeight: React.PropTypes.number,
-  overlayWidth: React.PropTypes.number,
-  size: React.PropTypes.oneOf(['small', 'large']),
-  startVisible: React.PropTypes.bool,
-  text: React.PropTypes.string,
-  textColor: React.PropTypes.string,
-  textFontSize: React.PropTypes.number,
-  textNumberOfLines: React.PropTypes.number
+  color: PropTypes.string,
+  overlayColor: PropTypes.string,
+  overlayHeight: PropTypes.number,
+  overlayWidth: PropTypes.number,
+  size: PropTypes.oneOf(['small', 'large']),
+  startVisible: PropTypes.bool,
+  text: PropTypes.string,
+  textColor: PropTypes.string,
+  textFontSize: PropTypes.number,
+  textNumberOfLines: PropTypes.number
 };
+
 
 BusyIndicator.defaultProps = {
   isDismissible: false,
