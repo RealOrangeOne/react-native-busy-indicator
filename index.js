@@ -123,6 +123,7 @@ BusyIndicator.propTypes = {
   textNumberOfLines: PropTypes.number
 };
 
+
 BusyIndicator.defaultProps = {
   isDismissible: false,
   overlayWidth: 120,
