@@ -100,8 +100,8 @@ class BusyIndicator extends React.Component {
 BusyIndicator.propTypes = {
 	color: PropTypes.string,
 	overlayColor: PropTypes.string,
-	overlayHeight: PropTypes.number,
-	overlayWidth: PropTypes.number,
+	overlayHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	overlayWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	size: PropTypes.oneOf(['small', 'large']),
 	startVisible: PropTypes.bool,
 	text: PropTypes.string,
